@@ -16,7 +16,7 @@
     <body>
         <div id="app">
             <div class="header">
-                <h1>Vue.js Poster Store</h1>
+                <h1>Rafael Poster Store</h1>
             </div>
             <div class="main">
                 <div class="products">
@@ -32,8 +32,11 @@
                             <div class="item-title">{{item.title}}</div>
                         </li>
                     </ul>
-                    <div>
+                    <div v-if="cart.length">
                         <div>Total: {{total}}</div>
+                    </div>
+                    <div v-else class="empty-cart">
+                        No items in the cart
                     </div>
                 </div>
             </div>
