@@ -1,3 +1,5 @@
+var PRICE = 9.99; 
+
 new Vue({
     el: '#app',
     data: {
@@ -11,7 +13,7 @@ new Vue({
     },
     methods: {
         addItem: function(index) {
-            this.total += 9.99;
+            this.total += PRICE;
             var item = this.items[index];
             var found = false;
             for (var i = 0; i < this.cart.length; i++){
@@ -22,11 +24,17 @@ new Vue({
             }
             if(!found){
                 this.cart.push({
-                    id: items.id,
+                    id: item.id,
                     title: item.title,
-                    qty: 1
+                    qty: 1,
+                    price: PRICE
                 });
             }
+        }
+    },
+    filters: {
+        currency: function(price) {
+            return "$".concat(price.toFixed(2));
         }
     }
 });
