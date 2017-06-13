@@ -17,6 +17,10 @@
         <div id="app">
             <div class="header">
                 <h1>Rafael Poster Store</h1>
+                <form class="searchbar" v-on:submit.prevent="onSubmit">
+
+                    <input type="submit" value="Search" class="btn">
+                </form>
             </div>
             <div class="main">
                 <div class="products">
